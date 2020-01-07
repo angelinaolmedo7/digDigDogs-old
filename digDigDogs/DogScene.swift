@@ -65,12 +65,17 @@ class DogScene: SKScene {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
-            //keeping the fancy spinner thing for now
-            self.touchDown(atPoint: touch.location(in: self))
+            let location = touch.location(in: self)
+            let frontTouchedNode = atPoint(location).name
+            //print(frontTouchedNode)
             
-            //user can click anywhere
-            print("next")
-            toYard()
+            //if there is a node where the user tapped
+            if frontTouchedNode != nil{
+                //print(frontTouchedNode!)
+                if frontTouchedNode! == "backButton" {
+                    toYard()
+                }
+            }
         }
     }
     

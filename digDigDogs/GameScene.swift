@@ -76,13 +76,12 @@ class GameScene: SKScene {
         for touch in touches {
             let location = touch.location(in: self)
             let frontTouchedNode = atPoint(location).name
-            print(frontTouchedNode)
+            //print(frontTouchedNode)
             
+            //if there is a node where the user tapped
             if frontTouchedNode != nil{
-                print(frontTouchedNode!)
-                //Check if there is a node there.
+                //print(frontTouchedNode!)
                 if frontTouchedNode! == "invButton" {
-                    print("to inv")
                     toInv()
                 }
                 else if frontTouchedNode! == "dogButton" {
