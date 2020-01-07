@@ -78,12 +78,16 @@ class GameScene: SKScene {
             let frontTouchedNode = atPoint(location).name
             print(frontTouchedNode)
             
-            //Check if there is an node there.
-            if name == "//invButton" {
-                toInv()
-            }
-            else if name == "//dogButton" {
-                toDogs()
+            if frontTouchedNode != nil{
+                print(frontTouchedNode!)
+                //Check if there is a node there.
+                if frontTouchedNode! == "invButton" {
+                    print("to inv")
+                    toInv()
+                }
+                else if frontTouchedNode! == "dogButton" {
+                    toDogs()
+                }
             }
         }
     }
