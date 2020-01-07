@@ -15,6 +15,10 @@
 		29B0C11E23C44FE500F24AF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29B0C11C23C44FE500F24AF7 /* Main.storyboard */; };
 		29B0C12023C44FE800F24AF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29B0C11F23C44FE800F24AF7 /* Assets.xcassets */; };
 		29B0C12323C44FE800F24AF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29B0C12123C44FE800F24AF7 /* LaunchScreen.storyboard */; };
+		29B0C12B23C4591D00F24AF7 /* InventoryScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 29B0C12A23C4591D00F24AF7 /* InventoryScene.sks */; };
+		29B0C12D23C4597500F24AF7 /* InventoryScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B0C12C23C4597500F24AF7 /* InventoryScene.swift */; };
+		29B0C12F23C4613400F24AF7 /* DogScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B0C12E23C4613400F24AF7 /* DogScene.swift */; };
+		29B0C13123C461AA00F24AF7 /* DogScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 29B0C13023C461AA00F24AF7 /* DogScene.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,10 @@
 		29B0C11F23C44FE800F24AF7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		29B0C12223C44FE800F24AF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		29B0C12423C44FE800F24AF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		29B0C12A23C4591D00F24AF7 /* InventoryScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = InventoryScene.sks; sourceTree = "<group>"; };
+		29B0C12C23C4597500F24AF7 /* InventoryScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryScene.swift; sourceTree = "<group>"; };
+		29B0C12E23C4613400F24AF7 /* DogScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogScene.swift; sourceTree = "<group>"; };
+		29B0C13023C461AA00F24AF7 /* DogScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DogScene.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +68,8 @@
 		29B0C11123C44FE500F24AF7 /* digDigDogs */ = {
 			isa = PBXGroup;
 			children = (
+				29B0C12A23C4591D00F24AF7 /* InventoryScene.sks */,
+				29B0C12C23C4597500F24AF7 /* InventoryScene.swift */,
 				29B0C11223C44FE500F24AF7 /* AppDelegate.swift */,
 				29B0C11423C44FE500F24AF7 /* GameScene.sks */,
 				29B0C11623C44FE500F24AF7 /* Actions.sks */,
@@ -69,6 +79,8 @@
 				29B0C11F23C44FE800F24AF7 /* Assets.xcassets */,
 				29B0C12123C44FE800F24AF7 /* LaunchScreen.storyboard */,
 				29B0C12423C44FE800F24AF7 /* Info.plist */,
+				29B0C12E23C4613400F24AF7 /* DogScene.swift */,
+				29B0C13023C461AA00F24AF7 /* DogScene.sks */,
 			);
 			path = digDigDogs;
 			sourceTree = "<group>";
@@ -133,7 +145,9 @@
 			files = (
 				29B0C11E23C44FE500F24AF7 /* Main.storyboard in Resources */,
 				29B0C11523C44FE500F24AF7 /* GameScene.sks in Resources */,
+				29B0C13123C461AA00F24AF7 /* DogScene.sks in Resources */,
 				29B0C12023C44FE800F24AF7 /* Assets.xcassets in Resources */,
+				29B0C12B23C4591D00F24AF7 /* InventoryScene.sks in Resources */,
 				29B0C12323C44FE800F24AF7 /* LaunchScreen.storyboard in Resources */,
 				29B0C11723C44FE500F24AF7 /* Actions.sks in Resources */,
 			);
@@ -146,9 +160,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29B0C12F23C4613400F24AF7 /* DogScene.swift in Sources */,
 				29B0C11923C44FE500F24AF7 /* GameScene.swift in Sources */,
 				29B0C11B23C44FE500F24AF7 /* GameViewController.swift in Sources */,
 				29B0C11323C44FE500F24AF7 /* AppDelegate.swift in Sources */,
+				29B0C12D23C4597500F24AF7 /* InventoryScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
