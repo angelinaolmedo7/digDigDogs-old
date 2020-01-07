@@ -20,14 +20,22 @@ class GameScene: SKScene {
     private var invButton : SKSpriteNode?
     private var dogButton : SKSpriteNode?
     
+    //up to three dogs in a scene
+    var dogOne: DogSprite?
+    var dogTwo: DogSprite?
+    var dogThree: DogSprite?
+    
     override func sceneDidLoad() {
 
         self.lastUpdateTime = 0
         
         // Get label node from scene and store it for use later
-        self.label = self.childNode(withName: "//helloLabel") as? SKLabelNode
-        self.invButton = self.childNode(withName: "//invButton") as? SKSpriteNode
-        self.dogButton = self.childNode(withName: "//dogButton") as? SKSpriteNode
+        self.label = self.childNode(withName: "helloLabel") as? SKLabelNode
+        self.invButton = self.childNode(withName: "invButton") as? SKSpriteNode
+        self.dogButton = self.childNode(withName: "dogButton") as? SKSpriteNode
+        
+        self.dogOne = self.childNode(withName: "dog") as? DogSprite
+        
         if let label = self.label {
             label.alpha = 0.0
             label.run(SKAction.fadeIn(withDuration: 2.0))
@@ -75,6 +83,7 @@ class GameScene: SKScene {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
             let location = touch.location(in: self)
+            let dogNode = atPoint(location) as? DogSprite
             let frontTouchedNode = atPoint(location).name
             //print(frontTouchedNode)
             
@@ -86,6 +95,9 @@ class GameScene: SKScene {
                 }
                 else if frontTouchedNode! == "dogButton" {
                     toDogs()
+                }
+                else if dogNode != nil {
+                    dogNode!.generateResource()
                 }
             }
         }

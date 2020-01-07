@@ -20,6 +20,7 @@
 		29B0C12F23C4613400F24AF7 /* DogScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B0C12E23C4613400F24AF7 /* DogScene.swift */; };
 		29B0C13123C461AA00F24AF7 /* DogScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 29B0C13023C461AA00F24AF7 /* DogScene.sks */; };
 		29B0C13323C5445F00F24AF7 /* DogSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B0C13223C5445F00F24AF7 /* DogSprite.swift */; };
+		29B0C13523C548A200F24AF7 /* 201412_dog.png in Resources */ = {isa = PBXBuildFile; fileRef = 29B0C13423C548A200F24AF7 /* 201412_dog.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		29B0C12E23C4613400F24AF7 /* DogScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogScene.swift; sourceTree = "<group>"; };
 		29B0C13023C461AA00F24AF7 /* DogScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = DogScene.sks; sourceTree = "<group>"; };
 		29B0C13223C5445F00F24AF7 /* DogSprite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogSprite.swift; sourceTree = "<group>"; };
+		29B0C13423C548A200F24AF7 /* 201412_dog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 201412_dog.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				29B0C11A23C44FE500F24AF7 /* GameViewController.swift */,
 				29B0C11C23C44FE500F24AF7 /* Main.storyboard */,
 				29B0C11F23C44FE800F24AF7 /* Assets.xcassets */,
+				29B0C13423C548A200F24AF7 /* 201412_dog.png */,
 				29B0C12123C44FE800F24AF7 /* LaunchScreen.storyboard */,
 				29B0C12423C44FE800F24AF7 /* Info.plist */,
 				29B0C12E23C4613400F24AF7 /* DogScene.swift */,
@@ -150,6 +153,7 @@
 				29B0C11523C44FE500F24AF7 /* GameScene.sks in Resources */,
 				29B0C13123C461AA00F24AF7 /* DogScene.sks in Resources */,
 				29B0C12023C44FE800F24AF7 /* Assets.xcassets in Resources */,
+				29B0C13523C548A200F24AF7 /* 201412_dog.png in Resources */,
 				29B0C12B23C4591D00F24AF7 /* InventoryScene.sks in Resources */,
 				29B0C12323C44FE800F24AF7 /* LaunchScreen.storyboard in Resources */,
 				29B0C11723C44FE500F24AF7 /* Actions.sks in Resources */,
