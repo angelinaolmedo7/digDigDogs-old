@@ -104,7 +104,7 @@ class GameScene: SKScene {
                     toDogs()
                 }
                 else if dogNode != nil {
-                    dogNode!.generateResource()
+                    handleItemRoll(dogNode!.generateResource())
                 }
             }
         }
@@ -222,16 +222,28 @@ class GameScene: SKScene {
             rareItemDict[newItem] = 0
         }
         
-        self.inventory = [trashItemDict, commonItemDict, rareItemDict]
+        self.inventory = [currencyDict, trashItemDict, commonItemDict, rareItemDict]
     }
     
     func handleItemRoll (_ itemRoll: (dp: Int, roll: Int)) {
-        //determine item
+        // Make sure inv exists
+        guard let inv=self.inventory else {
+            return
+        }
+        // Determine item
         var newItem: (itm:Item, quantity:Int)
         if itemRoll.roll <= 30 {
             newItem = (Item(name: "coins", rarity: Item.Rarity.currency), calcCoins(exponent(base: 2, exp: itemRoll.dp)))
         }
-        else if itemRoll.dp == 0 {
+        else {
+            newItem = (Item(name: Helper.trashItemNames.randomElement()!, rarity: Item.Rarity.trash), 1)
+        }
+        
+        // Add quantity of item to proper dict value
+        for catagory in inventory! {
+            if catagory[newItem.itm] != nil {
+                inventory![(inventory?.firstIndex(of: catagory))!][newItem.itm]! += newItem.quantity
+            }
         }
         
     }
@@ -241,10 +253,13 @@ class GameScene: SKScene {
     }
     
     func exponent(base: Int, exp: Int) -> Int {
-      var result: Int = 1
-      for _ in 1 ... exp {
-        result *= base
-      }
-      return result
+        if exp == 0 {
+            return 1
+        }
+        var result: Int = 1
+        for _ in 1 ... exp {
+            result *= base
+        }
+        return result
     }
 }

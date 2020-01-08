@@ -32,7 +32,8 @@ class DogSprite: SKSpriteNode {
     }
     
     func generateResource() -> (dp: Int, roll: Int) {
-        return (dp: self.dp, roll: (Int.random(in: 1...100)))
+        print(self.dp)
+        return (dp: self.dp ?? 0, roll: (Int.random(in: 1...100)))
     }
 }
 
