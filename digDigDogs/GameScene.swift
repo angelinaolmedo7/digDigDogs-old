@@ -198,28 +198,53 @@ class GameScene: SKScene {
     }
     
     func establishItems() {
-        let trashItemNames : [String] = ["bottle cap", "can", "wrapper"]
-        let commonItemNames : [String] = ["twine", "screw", "battery", "flower", "leaf"]
-        let rareItemNames : [String] = ["ribbon", "teddy bear"]
+        var currencyDict : [Item : Int] = [:]
+        for name in Helper.currencyNames {
+            let newItem = Item(name: name, rarity: Item.Rarity.currency)
+            currencyDict[newItem] = 0
+        }
         
         var trashItemDict : [Item : Int] = [:]
-        for name in trashItemNames {
+        for name in Helper.trashItemNames {
             let newItem = Item(name: name, rarity: Item.Rarity.trash)
             trashItemDict[newItem] = 0
         }
         
         var commonItemDict : [Item : Int] = [:]
-        for name in commonItemNames {
+        for name in Helper.commonItemNames {
             let newItem = Item(name: name, rarity: Item.Rarity.common)
             commonItemDict[newItem] = 0
         }
         
         var rareItemDict : [Item : Int] = [:]
-        for name in rareItemNames {
+        for name in Helper.rareItemNames {
             let newItem = Item(name: name, rarity: Item.Rarity.rare)
             rareItemDict[newItem] = 0
         }
         
         self.inventory = [trashItemDict, commonItemDict, rareItemDict]
+    }
+    
+    func handleItemRoll (_ itemRoll: (dp: Int, roll: Int)) {
+        //determine item
+        var newItem: (itm:Item, quantity:Int)
+        if itemRoll.roll <= 30 {
+            newItem = (Item(name: "coins", rarity: Item.Rarity.currency), calcCoins(exponent(base: 2, exp: itemRoll.dp)))
+        }
+        else if itemRoll.dp == 0 {
+        }
+        
+    }
+    
+    func calcCoins (_ multiplyer: Int) -> Int {
+        return Int.random(in: 1...20)*multiplyer
+    }
+    
+    func exponent(base: Int, exp: Int) -> Int {
+      var result: Int = 1
+      for _ in 1 ... exp {
+        result *= base
+      }
+      return result
     }
 }

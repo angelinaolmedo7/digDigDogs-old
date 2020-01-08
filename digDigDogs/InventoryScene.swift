@@ -148,16 +148,20 @@ class InventoryScene: SKScene {
     }
     
     func setItemsLabel() {
-        var labelText : String = "Trash:"
+        var labelText : String = "Coins: "
         for item in inventory![0] {
-            labelText += "\n\(item.key.name): \(String(item.value))"
+            labelText += "\(String(item.value))\n"
         }
-        labelText += "\nCommon:"
+        labelText += "\nTrash:"
         for item in inventory![1] {
             labelText += "\n\(item.key.name): \(String(item.value))"
         }
-        labelText += "\nRare:"
+        labelText += "\nCommon:"
         for item in inventory![2] {
+            labelText += "\n\(item.key.name): \(String(item.value))"
+        }
+        labelText += "\nRare:"
+        for item in inventory![3] {
             labelText += "\n\(item.key.name): \(String(item.value))"
         }
         self.itemsLabel?.text = labelText

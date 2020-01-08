@@ -31,8 +31,8 @@ class DogSprite: SKSpriteNode {
         super.init(coder: aDecoder)
     }
     
-    func generateResource() {
-        print("my dp is \(dp ?? 0)")
+    func generateResource() -> (dp: Int, roll: Int) {
+        return (dp: self.dp, roll: (Int.random(in: 1...100)))
     }
 }
 

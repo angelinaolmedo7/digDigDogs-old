@@ -12,6 +12,7 @@ import SpriteKit
 struct Item : Hashable{
     
     enum Rarity: String{
+        case currency = "currency"
         case trash = "trash"
         case vcommon = "very common"
         case common = "common"

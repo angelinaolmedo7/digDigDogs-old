@@ -22,6 +22,7 @@
 		29B0C13323C5445F00F24AF7 /* DogSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B0C13223C5445F00F24AF7 /* DogSprite.swift */; };
 		29B0C13523C548A200F24AF7 /* 201412_dog.png in Resources */ = {isa = PBXBuildFile; fileRef = 29B0C13423C548A200F24AF7 /* 201412_dog.png */; };
 		29B0C13723C54F9E00F24AF7 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B0C13623C54F9E00F24AF7 /* Item.swift */; };
+		29B0C13923C6778A00F24AF7 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B0C13823C6778A00F24AF7 /* Helper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		29B0C13223C5445F00F24AF7 /* DogSprite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogSprite.swift; sourceTree = "<group>"; };
 		29B0C13423C548A200F24AF7 /* 201412_dog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 201412_dog.png; sourceTree = "<group>"; };
 		29B0C13623C54F9E00F24AF7 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		29B0C13823C6778A00F24AF7 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 				29B0C12E23C4613400F24AF7 /* DogScene.swift */,
 				29B0C13023C461AA00F24AF7 /* DogScene.sks */,
 				29B0C13223C5445F00F24AF7 /* DogSprite.swift */,
+				29B0C13823C6778A00F24AF7 /* Helper.swift */,
 			);
 			path = digDigDogs;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 				29B0C13723C54F9E00F24AF7 /* Item.swift in Sources */,
 				29B0C11323C44FE500F24AF7 /* AppDelegate.swift in Sources */,
 				29B0C12D23C4597500F24AF7 /* InventoryScene.swift in Sources */,
+				29B0C13923C6778A00F24AF7 /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
