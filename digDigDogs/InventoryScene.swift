@@ -94,6 +94,9 @@ class InventoryScene: SKScene {
                 sceneNode.entities = scene.entities
                 sceneNode.graphs = scene.graphs
                 
+                // Pass back inventory info
+                sceneNode.inventory = self.inventory
+                
                 // Set the scale mode to scale to fit the window
                 sceneNode.scaleMode = .aspectFill
                 
