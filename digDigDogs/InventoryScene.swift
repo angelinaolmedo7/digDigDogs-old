@@ -18,6 +18,7 @@ class InventoryScene: SKScene {
     
     private var lastUpdateTime : TimeInterval = 0
     private var spinnyNode : SKShapeNode?
+    private var itemsLabel : SKLabelNode?
     
     
     override func sceneDidLoad() {
@@ -28,6 +29,8 @@ class InventoryScene: SKScene {
         // Create shape node to use during mouse interaction
         let w = (self.size.width + self.size.height) * 0.05
         self.spinnyNode = SKShapeNode.init(rectOf: CGSize.init(width: w, height: w), cornerRadius: w * 0.3)
+        
+        self.itemsLabel = self.childNode(withName: "itemsLabel") as? SKLabelNode
         
         if let spinnyNode = self.spinnyNode {
             spinnyNode.lineWidth = 2.5
@@ -136,6 +139,27 @@ class InventoryScene: SKScene {
             entity.update(deltaTime: dt)
         }
         
+        // Update inventory display
+        if inventory != nil {
+            setItemsLabel()
+        }
+        
         self.lastUpdateTime = currentTime
+    }
+    
+    func setItemsLabel() {
+        var labelText : String = "Trash:"
+        for item in inventory![0] {
+            labelText += "\n\(item.key.name): \(String(item.value))"
+        }
+        labelText += "\nCommon:"
+        for item in inventory![1] {
+            labelText += "\n\(item.key.name): \(String(item.value))"
+        }
+        labelText += "\nRare:"
+        for item in inventory![2] {
+            labelText += "\n\(item.key.name): \(String(item.value))"
+        }
+        self.itemsLabel?.text = labelText
     }
 }
