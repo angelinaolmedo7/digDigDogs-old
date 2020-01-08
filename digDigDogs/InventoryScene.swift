@@ -11,6 +11,8 @@ import GameplayKit
 
 class InventoryScene: SKScene {
     
+    var inventory: [[Item : Int]]?
+    
     var entities = [GKEntity]()
     var graphs = [String : GKGraph]()
     
@@ -64,6 +66,7 @@ class InventoryScene: SKScene {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
+            print(inventory)
             let location = touch.location(in: self)
             let frontTouchedNode = atPoint(location).name
             //print(frontTouchedNode)

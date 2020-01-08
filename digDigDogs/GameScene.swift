@@ -21,7 +21,7 @@ class GameScene: SKScene {
     private var dogButton : SKSpriteNode?
     
     
-    private var inventory: [[Item : Int]]?
+    var inventory: [[Item : Int]]?
     
     //up to three dogs in a scene
     var dogOne: DogSprite? 
