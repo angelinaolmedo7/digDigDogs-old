@@ -15,4 +15,5 @@ class Helper {
     static let commonItemNames : [String] = ["twine", "screw", "battery", "flower", "leaf"]
     static let rareItemNames : [String] = ["ribbon", "teddy bear"]
     
+    static let dogBreeds : [String] = ["Mutt", "Pug", "Border Collie", "Australian Shepherd", "Dog?"]
 }

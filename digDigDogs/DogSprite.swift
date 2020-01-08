@@ -20,8 +20,8 @@ class DogSprite: SKSpriteNode {
     }
     
     var dogName: String!
-    var breed: DogBreeds!
     var dp: Int!
+    var unlocked: Bool = false
     
     override init(texture: SKTexture?, color: UIColor, size: CGSize) {
         super.init(texture: texture, color: color, size: size)
