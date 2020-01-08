@@ -120,6 +120,9 @@ class GameScene: SKScene {
                 sceneNode.entities = scene.entities
                 sceneNode.graphs = scene.graphs
                 
+                // Pass inventory information
+                sceneNode.inventory = self.inventory
+                
                 // Set the scale mode to scale to fit the window
                 sceneNode.scaleMode = .aspectFill
                 
