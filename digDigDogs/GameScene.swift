@@ -20,8 +20,11 @@ class GameScene: SKScene {
     private var invButton : SKSpriteNode?
     private var dogButton : SKSpriteNode?
     
+    
+    private var inventory: [[Item : Int]]?
+    
     //up to three dogs in a scene
-    var dogOne: DogSprite?
+    var dogOne: DogSprite? 
     var dogTwo: DogSprite?
     var dogThree: DogSprite?
     
@@ -39,6 +42,10 @@ class GameScene: SKScene {
         if let label = self.label {
             label.alpha = 0.0
             label.run(SKAction.fadeIn(withDuration: 2.0))
+        }
+        
+        if inventory == nil {
+            establishItems()
         }
         
         // Create shape node to use during mouse interaction
@@ -185,5 +192,31 @@ class GameScene: SKScene {
         }
         
         self.lastUpdateTime = currentTime
+    }
+    
+    func establishItems() {
+        let trashItemNames : [String] = ["bottle cap", "can", "wrapper"]
+        let commonItemNames : [String] = ["twine", "screw", "battery", "flower", "leaf"]
+        let rareItemNames : [String] = ["ribbon", "teddy bear"]
+        
+        var trashItemDict : [Item : Int] = [:]
+        for name in trashItemNames {
+            let newItem = Item(name: name, rarity: Item.Rarity.trash)
+            trashItemDict[newItem] = 0
+        }
+        
+        var commonItemDict : [Item : Int] = [:]
+        for name in commonItemNames {
+            let newItem = Item(name: name, rarity: Item.Rarity.common)
+            commonItemDict[newItem] = 0
+        }
+        
+        var rareItemDict : [Item : Int] = [:]
+        for name in rareItemNames {
+            let newItem = Item(name: name, rarity: Item.Rarity.rare)
+            rareItemDict[newItem] = 0
+        }
+        
+        self.inventory = [trashItemDict, commonItemDict, rareItemDict]
     }
 }
