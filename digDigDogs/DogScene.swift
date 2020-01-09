@@ -12,6 +12,10 @@ import GameplayKit
 
 class DogScene: SKScene {
     
+    
+    var inventory: [[Item : Int]]?
+    var dogs: [Dog]?
+    
     var entities = [GKEntity]()
     var graphs = [String : GKGraph]()
     

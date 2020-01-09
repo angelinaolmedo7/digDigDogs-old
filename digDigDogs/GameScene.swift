@@ -24,6 +24,7 @@ class GameScene: SKScene {
     var inventory: [[Item : Int]]?
     
     //up to three dogs in a scene
+    var dogs: [Dog]?
     var dogOne: DogSprite? 
     var dogTwo: DogSprite?
     var dogThree: DogSprite?
@@ -46,6 +47,9 @@ class GameScene: SKScene {
         
         if inventory == nil {
             establishItems()
+        }
+        if dogs == nil {
+            dogs = Helper.getDogList()
         }
         
         // Create shape node to use during mouse interaction
@@ -227,7 +231,7 @@ class GameScene: SKScene {
     
     func handleItemRoll (_ itemRoll: (dp: Int, roll: Int)) {
         // Make sure inv exists
-        guard let inv=self.inventory else {
+        guard self.inventory != nil else {
             return
         }
         // Determine item

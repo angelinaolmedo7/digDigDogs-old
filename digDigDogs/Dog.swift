@@ -13,10 +13,11 @@ class Dog {
     var dogName: String!
     var dp: Int!
     var unlocked: Bool!
+    var active: Bool!
     var hiddenInCrafting: Bool!
     var accessories: [String] = []
     
-    init(breed: String, name: String, dp: Int = 0, unlocked: Bool = false, hidden: Bool = false) {
+    init(breed: String, name: String, dp: Int = 0, unlocked: Bool = false, active: Bool = false, hidden: Bool = false) {
         self.breed = breed
         self.dogName = name
         self.dp = dp

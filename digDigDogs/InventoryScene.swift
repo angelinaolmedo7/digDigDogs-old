@@ -69,7 +69,7 @@ class InventoryScene: SKScene {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
-            print(inventory)
+            //print(inventory)
             let location = touch.location(in: self)
             let frontTouchedNode = atPoint(location).name
             //print(frontTouchedNode)
