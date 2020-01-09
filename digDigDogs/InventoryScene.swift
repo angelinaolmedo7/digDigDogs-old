@@ -22,6 +22,7 @@ class InventoryScene: SKScene {
     
     override func sceneDidLoad() {
         self.lastUpdateTime = 0
+        self.itemsLabel = self.childNode(withName: "itemsLabel") as? SKLabelNode
     }
     
     func touchDown(atPoint pos : CGPoint) {
@@ -35,7 +36,6 @@ class InventoryScene: SKScene {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
-            //print(inventory)
             let location = touch.location(in: self)
             let frontTouchedNode = atPoint(location).name
             //print(frontTouchedNode)
