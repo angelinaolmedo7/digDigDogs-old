@@ -105,6 +105,18 @@ class GameScene: SKScene {
                         dogOneLabel!.run(fadeInOut)
 //                        dogOneLabel!.isHidden = true
                     }
+                    if frontTouchedNode! == "dog2" {
+                        dogTwoLabel!.text = roll
+                        dogTwoLabel!.alpha = 0
+                        dogTwoLabel!.isHidden = false
+                        dogTwoLabel!.run(fadeInOut)
+                    }
+                    if frontTouchedNode! == "dog3" {
+                        dogThreeLabel!.text = roll
+                        dogThreeLabel!.alpha = 0
+                        dogThreeLabel!.isHidden = false
+                        dogThreeLabel!.run(fadeInOut)
+                    }
                 }
             }
         }
