@@ -12,8 +12,12 @@ class Helper {
 
     static let currencyNames : [String] = ["coins"]
     static let trashItemNames : [String] = ["bottle cap", "can", "wrapper"]
-    static let commonItemNames : [String] = ["twine", "screw", "battery", "flower", "leaf"]
+    static let vCommonItemNames : [String] = ["twine", "screw", "battery", "flower", "leaf"]
+    static let commonItemNames : [String] = ["brown fur", "white fur", "black fur", "yellow fur", "gray fur", "bone"]
+    static let uncommonItemNames : [String] = ["bow", "collar", "leash", "dog tag"]
+    static let unusualItemNames : [String] = ["blanket", "dog treat", "dog toy"]
     static let rareItemNames : [String] = ["ribbon", "teddy bear"]
+    static let vRareItemNames : [String] = ["plant fossil", "dino fossil", "fish fossil"]
     
     static let dogBreeds : [String] = ["Mutt", "Pug", "Border Collie", "Australian Shepherd", "Dog?"]
     static let genericDogNames : [String] = [
@@ -45,5 +49,57 @@ class Helper {
             }
         }
         return rtnDogs
+    }
+    
+    static func generateEmptyItems() -> [[Item : Int]] {
+        var currencyDict : [Item : Int] = [:]
+        for name in Helper.currencyNames {
+            let newItem = Item(name: name, rarity: Item.Rarity.currency)
+            currencyDict[newItem] = 0
+        }
+        
+        var trashItemDict : [Item : Int] = [:]
+        for name in Helper.trashItemNames {
+            let newItem = Item(name: name, rarity: Item.Rarity.trash)
+            trashItemDict[newItem] = 0
+        }
+        
+        var vCommonItemDict : [Item : Int] = [:]
+        for name in Helper.vCommonItemNames {
+            let newItem = Item(name: name, rarity: Item.Rarity.vcommon)
+            vCommonItemDict[newItem] = 0
+        }
+        
+        var commonItemDict : [Item : Int] = [:]
+        for name in Helper.commonItemNames {
+            let newItem = Item(name: name, rarity: Item.Rarity.common)
+            commonItemDict[newItem] = 0
+        }
+        
+        var uncommonItemDict : [Item : Int] = [:]
+        for name in Helper.uncommonItemNames {
+            let newItem = Item(name: name, rarity: Item.Rarity.uncommon)
+            uncommonItemDict[newItem] = 0
+        }
+        
+        var unusualItemDict : [Item : Int] = [:]
+        for name in Helper.unusualItemNames {
+            let newItem = Item(name: name, rarity: Item.Rarity.unusual)
+            unusualItemDict[newItem] = 0
+        }
+        
+        var rareItemDict : [Item : Int] = [:]
+        for name in Helper.rareItemNames {
+            let newItem = Item(name: name, rarity: Item.Rarity.rare)
+            rareItemDict[newItem] = 0
+        }
+        
+        var vRareItemDict : [Item : Int] = [:]
+        for name in Helper.vRareItemNames {
+            let newItem = Item(name: name, rarity: Item.Rarity.vrare)
+            vRareItemDict[newItem] = 0
+        }
+        
+        return [currencyDict, vCommonItemDict, commonItemDict, uncommonItemDict, unusualItemDict, rareItemDict, vRareItemDict]
     }
 }

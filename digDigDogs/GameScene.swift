@@ -219,31 +219,7 @@ class GameScene: SKScene {
     }
     
     func establishItems() {
-        var currencyDict : [Item : Int] = [:]
-        for name in Helper.currencyNames {
-            let newItem = Item(name: name, rarity: Item.Rarity.currency)
-            currencyDict[newItem] = 0
-        }
-        
-        var trashItemDict : [Item : Int] = [:]
-        for name in Helper.trashItemNames {
-            let newItem = Item(name: name, rarity: Item.Rarity.trash)
-            trashItemDict[newItem] = 0
-        }
-        
-        var commonItemDict : [Item : Int] = [:]
-        for name in Helper.commonItemNames {
-            let newItem = Item(name: name, rarity: Item.Rarity.common)
-            commonItemDict[newItem] = 0
-        }
-        
-        var rareItemDict : [Item : Int] = [:]
-        for name in Helper.rareItemNames {
-            let newItem = Item(name: name, rarity: Item.Rarity.rare)
-            rareItemDict[newItem] = 0
-        }
-        
-        self.inventory = [currencyDict, trashItemDict, commonItemDict, rareItemDict]
+        self.inventory = Helper.generateEmptyItems()
     }
     
     func handleItemRoll (_ itemRoll: (dp: Int, roll: Int)) -> String {
