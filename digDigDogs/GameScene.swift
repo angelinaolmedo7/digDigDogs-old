@@ -97,8 +97,9 @@ class GameScene: SKScene {
                     toDogs()
                 }
                 else if dogNode != nil {
-                    let roll = handleItemRoll(dogNode!.generateResource())
+                    let active = Helper.activeDogs(dogs!)
                     if frontTouchedNode! == "dog1" {
+                        let roll = handleItemRoll(active[0].generateResource())
                         dogOneLabel!.text = roll
                         dogOneLabel!.alpha = 0
                         dogOneLabel!.isHidden = false
@@ -106,12 +107,14 @@ class GameScene: SKScene {
 //                        dogOneLabel!.isHidden = true
                     }
                     if frontTouchedNode! == "dog2" {
+                        let roll = handleItemRoll(active[1].generateResource())
                         dogTwoLabel!.text = roll
                         dogTwoLabel!.alpha = 0
                         dogTwoLabel!.isHidden = false
                         dogTwoLabel!.run(fadeInOut)
                     }
                     if frontTouchedNode! == "dog3" {
+                        let roll = handleItemRoll(active[2].generateResource())
                         dogThreeLabel!.text = roll
                         dogThreeLabel!.alpha = 0
                         dogThreeLabel!.isHidden = false
