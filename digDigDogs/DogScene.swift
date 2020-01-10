@@ -192,6 +192,7 @@ class DogScene: SKScene {
     }
     
     func switchActive (_ name : String) {
+        
         if name == "mutt" {
             dogs![0].active = !dogs![0].active
         }
@@ -206,6 +207,10 @@ class DogScene: SKScene {
         }
         else if name == "cat" {
             dogs![4].active = !dogs![4].active
+        }
+        if Helper.activeDogs(dogs!).count == 0 {
+            // Can't deactivate your last active dog
+            dogs![0].active = true
         }
     }
 }
