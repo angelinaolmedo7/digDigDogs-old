@@ -31,6 +31,7 @@ class GameScene: SKScene {
     var dogTwoLabel : SKLabelNode?
     var dogThreeLabel : SKLabelNode?
     
+    
     override func sceneDidLoad() {
 
         self.lastUpdateTime = 0
@@ -78,6 +79,12 @@ class GameScene: SKScene {
             let location = touch.location(in: self)
             let dogNode = atPoint(location) as? DogSprite
             let frontTouchedNode = atPoint(location).name
+
+            // Fade animation
+            let fadeOut = SKAction.fadeAlpha(to: 0, duration: 0.5)
+            let fadeIn = SKAction.fadeAlpha(to: 1, duration: 0.5)
+            let fadeInOut = SKAction.sequence([fadeIn, fadeOut])
+            
             //print(frontTouchedNode)
             
             //if there is a node where the user tapped
@@ -90,7 +97,14 @@ class GameScene: SKScene {
                     toDogs()
                 }
                 else if dogNode != nil {
-                    handleItemRoll(dogNode!.generateResource())
+                    let roll = handleItemRoll(dogNode!.generateResource())
+                    if frontTouchedNode! == "dog1" {
+                        dogOneLabel!.text = roll
+                        dogOneLabel!.alpha = 0
+                        dogOneLabel!.isHidden = false
+                        dogOneLabel!.run(fadeInOut)
+//                        dogOneLabel!.isHidden = true
+                    }
                 }
             }
         }
@@ -220,10 +234,10 @@ class GameScene: SKScene {
         self.inventory = [currencyDict, trashItemDict, commonItemDict, rareItemDict]
     }
     
-    func handleItemRoll (_ itemRoll: (dp: Int, roll: Int)) {
+    func handleItemRoll (_ itemRoll: (dp: Int, roll: Int)) -> String {
         // Make sure inv exists
         guard self.inventory != nil else {
-            return
+            return "ERROR"
         }
         // Determine item
         var newItem: (itm:Item, quantity:Int)
@@ -240,7 +254,7 @@ class GameScene: SKScene {
                 inventory![(inventory?.firstIndex(of: catagory))!][newItem.itm]! += newItem.quantity
             }
         }
-        
+        return "+\(newItem.quantity) \(newItem.itm.name)"
     }
     
     func calcCoins (_ multiplyer: Int) -> Int {
