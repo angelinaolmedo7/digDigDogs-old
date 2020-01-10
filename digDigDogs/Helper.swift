@@ -11,13 +11,13 @@ import Foundation
 class Helper {
 
     static let currencyNames : [String] = ["coins"]
-    static let trashItemNames : [String] = ["bottle cap", "can", "wrapper"]
-    static let vCommonItemNames : [String] = ["twine", "screw", "battery", "flower", "leaf"]
-    static let commonItemNames : [String] = ["brown fur", "white fur", "black fur", "yellow fur", "gray fur", "bone"]
-    static let uncommonItemNames : [String] = ["bow", "collar", "leash", "dog tag"]
-    static let unusualItemNames : [String] = ["blanket", "dog treat", "dog toy"]
+    static let trashItemNames : [String] = ["bottle cap", "wrapper", "can"]
+    static let vCommonItemNames : [String] = ["twine", "screw", "bone"]
+    static let commonItemNames : [String] = ["black fur", "gray fur", "white fur", "yellow fur", "brown fur"]
+    static let uncommonItemNames : [String] = ["dog tag", "collar", "leash"]
+    static let unusualItemNames : [String] = ["blanket", "bow", "dog treat"]
     static let rareItemNames : [String] = ["ribbon", "teddy bear"]
-    static let vRareItemNames : [String] = ["plant fossil", "dino fossil", "fish fossil"]
+    static let vRareItemNames : [String] = ["fossil plant", "fossil dino", "fossil fish"]
     
     static let dogBreeds : [String] = ["Mutt", "Pug", "Border Collie", "Australian Shepherd", "Dog?"]
     static let genericDogNames : [String] = [
@@ -100,6 +100,6 @@ class Helper {
             vRareItemDict[newItem] = 0
         }
         
-        return [currencyDict, vCommonItemDict, commonItemDict, uncommonItemDict, unusualItemDict, rareItemDict, vRareItemDict]
+        return [currencyDict, trashItemDict, vCommonItemDict, commonItemDict, uncommonItemDict, unusualItemDict, rareItemDict, vRareItemDict]
     }
 }
