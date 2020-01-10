@@ -284,7 +284,7 @@ class GameScene: SKScene {
         if active!.count >= 2 {
             dogTwo?.texture = SKTexture(imageNamed: active![1].textureName)
             dogTwo!.isHidden = false
-            if active!.count == 1 {
+            if active!.count == 2 {
                 dogThree!.isHidden = true
             }
         }

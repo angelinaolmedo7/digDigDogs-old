@@ -25,6 +25,12 @@ class DogScene: SKScene {
     private var asLabel : SKLabelNode?
     private var catLabel : SKLabelNode?
     
+    private var muttButton : SKSpriteNode?
+    private var pugButton : SKSpriteNode?
+    private var bcButton : SKSpriteNode?
+    private var asButton : SKSpriteNode?
+    private var catButton : SKSpriteNode?
+    
     private var lastUpdateTime : TimeInterval = 0
     
     override func sceneDidLoad() {
@@ -35,6 +41,12 @@ class DogScene: SKScene {
         self.bcLabel = self.childNode(withName: "bcLabel") as? SKLabelNode
         self.asLabel = self.childNode(withName: "asLabel") as? SKLabelNode
         self.catLabel = self.childNode(withName: "catLabel") as? SKLabelNode
+        
+        self.muttButton = self.childNode(withName: "mutt") as? SKSpriteNode
+        self.pugButton = self.childNode(withName: "pug") as? SKSpriteNode
+        self.bcButton = self.childNode(withName: "bc") as? SKSpriteNode
+        self.asButton = self.childNode(withName: "as") as? SKSpriteNode
+        self.catButton = self.childNode(withName: "cat") as? SKSpriteNode
     }
     
     
@@ -59,6 +71,9 @@ class DogScene: SKScene {
                 if frontTouchedNode! == "backButton" {
                     toYard()
                 }
+                else if frontTouchedNode! == "mutt" || frontTouchedNode! == "pug" || frontTouchedNode! == "bc" || frontTouchedNode! == "as" || frontTouchedNode! == "cat" {
+                    switchActive(frontTouchedNode!)
+                }
             }
         }
     }
@@ -72,6 +87,10 @@ class DogScene: SKScene {
                 // Copy gameplay related content over to the scene
                 sceneNode.entities = scene.entities
                 sceneNode.graphs = scene.graphs
+                
+                // Pass back inventory info
+                sceneNode.inventory = self.inventory
+                sceneNode.dogs = self.dogs
                 
                 // Set the scale mode to scale to fit the window
                 sceneNode.scaleMode = .aspectFill
@@ -122,6 +141,7 @@ class DogScene: SKScene {
         
         if dogs != nil {
             updateLabels()
+            updateActive()
         }
     }
     
@@ -131,6 +151,53 @@ class DogScene: SKScene {
         bcLabel!.text = "Border Collie\nLvl. \(dogs![2].dp ?? 0)\n\"\(dogs![2].dogName ?? "ERROR")\""
         asLabel!.text = "Australian Shepherd\nLvl. \(dogs![3].dp ?? 0)\n\"\(dogs![3].dogName ?? "ERROR")\""
         catLabel!.text = "Dog?\nLvl. \(dogs![4].dp ?? 4)\n\"\(dogs![4].dogName ?? "ERROR")\""
+    }
+    
+    func updateActive() {
+        // Inactive dogs show up at 50% opacity
+        if dogs![0].active {
+            muttButton!.alpha = 1
+        }
+        else {
+            muttButton!.alpha = 0.5
+        }
+        
+        if dogs![1].active {
+            pugButton!.alpha = 1
+        }
+        else {
+            pugButton!.alpha = 0.5
+        }
+        
+        if dogs![2].active {
+            bcButton!.alpha = 1
+        }
+        else {
+            bcButton!.alpha = 0.5
+        }
+        
+        if dogs![3].active {
+            asButton!.alpha = 1
+        }
+        else {
+            asButton!.alpha = 0.5
+        }
+        
+        if dogs![4].active {
+            catButton!.alpha = 1
+        }
+        else {
+            catButton!.alpha = 0.5
+        }
+    }
+    
+    func switchActive (_ name : String) {
+        if name == "mutt" {
+            dogs![1].active = true
+        }
+        else if name == "pug" {
+            dogs![1].active = true
+        }
     }
 }
 
