@@ -19,10 +19,22 @@ class DogScene: SKScene {
     var entities = [GKEntity]()
     var graphs = [String : GKGraph]()
     
+    private var muttLabel : SKLabelNode?
+    private var pugLabel : SKLabelNode?
+    private var bcLabel : SKLabelNode?
+    private var asLabel : SKLabelNode?
+    private var catLabel : SKLabelNode?
+    
     private var lastUpdateTime : TimeInterval = 0
     
     override func sceneDidLoad() {
         self.lastUpdateTime = 0
+        
+        self.muttLabel = self.childNode(withName: "muttLabel") as? SKLabelNode
+        self.pugLabel = self.childNode(withName: "pugLabel") as? SKLabelNode
+        self.bcLabel = self.childNode(withName: "bcLabel") as? SKLabelNode
+        self.asLabel = self.childNode(withName: "asLabel") as? SKLabelNode
+        self.catLabel = self.childNode(withName: "catLabel") as? SKLabelNode
     }
     
     
@@ -107,6 +119,15 @@ class DogScene: SKScene {
         }
         
         self.lastUpdateTime = currentTime
+        
+        if dogs != nil {
+            updateLabels()
+        }
+    }
+    
+    func updateLabels() {
+        muttLabel!.text = "Mutt, \"\(dogs![0].dogName ?? "ERROR")\""
+        pugLabel!.text = "Pug, \"\(dogs![1].dogName ?? "ERROR")\""
     }
 }
 

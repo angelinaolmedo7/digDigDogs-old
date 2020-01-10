@@ -12,6 +12,7 @@ import GameplayKit
 class InventoryScene: SKScene {
     
     var inventory: [[Item : Int]]?
+    var dogs: [Dog]?
     
     var entities = [GKEntity]()
     var graphs = [String : GKGraph]()
@@ -62,6 +63,7 @@ class InventoryScene: SKScene {
                 
                 // Pass back inventory info
                 sceneNode.inventory = self.inventory
+                sceneNode.dogs = self.dogs
                 
                 // Set the scale mode to scale to fit the window
                 sceneNode.scaleMode = .aspectFill
