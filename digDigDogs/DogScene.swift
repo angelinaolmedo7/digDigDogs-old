@@ -126,8 +126,11 @@ class DogScene: SKScene {
     }
     
     func updateLabels() {
-        muttLabel!.text = "Mutt, \"\(dogs![0].dogName ?? "ERROR")\""
-        pugLabel!.text = "Pug, \"\(dogs![1].dogName ?? "ERROR")\""
+        muttLabel!.text = "Mutt\nLvl. \(dogs![0].dp ?? 0)\n\"\(dogs![0].dogName ?? "ERROR")\""
+        pugLabel!.text = "Pug\nLvl. \(dogs![1].dp ?? 0)\n\"\(dogs![1].dogName ?? "ERROR")\""
+        bcLabel!.text = "Border Collie\nLvl. \(dogs![2].dp ?? 0)\n\"\(dogs![2].dogName ?? "ERROR")\""
+        asLabel!.text = "Australian Shepherd\nLvl. \(dogs![3].dp ?? 0)\n\"\(dogs![3].dogName ?? "ERROR")\""
+        catLabel!.text = "Dog?\nLvl. \(dogs![4].dp ?? 4)\n\"\(dogs![4].dogName ?? "ERROR")\""
     }
 }
 
