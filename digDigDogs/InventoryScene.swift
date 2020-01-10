@@ -135,6 +135,6 @@ class InventoryScene: SKScene {
         for item in inventory![3] {
             labelText += "\n\(item.key.name): \(String(item.value))"
         }
-        self.itemsLabel?.text = labelText
+        //self.itemsLabel?.text = labelText
     }
 }
