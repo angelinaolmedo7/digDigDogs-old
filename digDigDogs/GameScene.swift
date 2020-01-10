@@ -231,7 +231,7 @@ class GameScene: SKScene {
             return "ERROR"
         }
         // Determine item
-        print(itemRoll.dp)
+        //print(itemRoll.dp)
         var newItem: (itm:Item, quantity:Int)
         if itemRoll.roll <= 30 {
             newItem = (Item(name: "coins", rarity: Item.Rarity.currency), calcCoins(exponent(base: 2, exp: itemRoll.dp)))

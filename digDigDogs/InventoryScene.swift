@@ -18,6 +18,10 @@ class InventoryScene: SKScene {
     var graphs = [String : GKGraph]()
     
     private var lastUpdateTime : TimeInterval = 0
+    
+    // Coins
+    private var coinsLabel : SKLabelNode?
+    
     // Trash items
     private var capCount : SKLabelNode?
     private var wrapperCount : SKLabelNode?
@@ -57,6 +61,8 @@ class InventoryScene: SKScene {
     
     override func sceneDidLoad() {
         self.lastUpdateTime = 0
+        
+        self.coinsLabel = self.childNode(withName: "coinsLabel") as? SKLabelNode
         
         self.capCount = self.childNode(withName: "capCount") as? SKLabelNode
         self.wrapperCount = self.childNode(withName: "wrapperCount") as? SKLabelNode
@@ -186,7 +192,7 @@ class InventoryScene: SKScene {
             labelText += "\(String(item.value))\n"
         }
         
-        print(String(describing: inventory![1]))
+        coinsLabel?.text = "Coins: " + String(describing: inventory![0][Item(name: "coins", rarity: Item.Rarity.currency)]!)
         
         capCount?.text = String(describing: inventory![1][Item(name: "bottle cap", rarity: Item.Rarity.trash)]!)
         wrapperCount?.text = String(describing: inventory![1][Item(name: "wrapper", rarity: Item.Rarity.trash)]!)
