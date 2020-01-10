@@ -228,12 +228,98 @@ class GameScene: SKScene {
             return "ERROR"
         }
         // Determine item
+        print(itemRoll.dp)
         var newItem: (itm:Item, quantity:Int)
         if itemRoll.roll <= 30 {
             newItem = (Item(name: "coins", rarity: Item.Rarity.currency), calcCoins(exponent(base: 2, exp: itemRoll.dp)))
         }
         else {
-            newItem = (Item(name: Helper.trashItemNames.randomElement()!, rarity: Item.Rarity.trash), 1)
+            if itemRoll.dp == 1 {
+                if itemRoll.roll <= 60 {
+                    newItem = (Item(name: Helper.trashItemNames.randomElement()!, rarity: Item.Rarity.trash), 1)
+                }
+                else if itemRoll.roll <= 88 {
+                    newItem = (Item(name: Helper.vCommonItemNames.randomElement()!, rarity: Item.Rarity.vcommon), 1)
+                }
+                else if itemRoll.roll <= 97 {
+                    newItem = (Item(name: Helper.commonItemNames.randomElement()!, rarity: Item.Rarity.common), 1)
+                }
+                else if itemRoll.roll <= 99  {
+                    newItem = (Item(name: Helper.uncommonItemNames.randomElement()!, rarity: Item.Rarity.uncommon), 1)
+                }
+                else {
+                    newItem = (Item(name: Helper.unusualItemNames.randomElement()!, rarity: Item.Rarity.unusual), 1)
+                }
+            }
+            else if itemRoll.dp == 2 {
+                if itemRoll.roll <= 45 {
+                    newItem = (Item(name: Helper.trashItemNames.randomElement()!, rarity: Item.Rarity.trash), 1)
+                }
+                else if itemRoll.roll <= 55 {
+                    newItem = (Item(name: Helper.vCommonItemNames.randomElement()!, rarity: Item.Rarity.vcommon), 1)
+                }
+                else if itemRoll.roll <= 70 {
+                    newItem = (Item(name: Helper.commonItemNames.randomElement()!, rarity: Item.Rarity.common), 1)
+                }
+                else if itemRoll.roll <= 85  {
+                    newItem = (Item(name: Helper.uncommonItemNames.randomElement()!, rarity: Item.Rarity.uncommon), 1)
+                }
+                else if itemRoll.roll <= 95  {
+                    newItem = (Item(name: Helper.unusualItemNames.randomElement()!, rarity: Item.Rarity.unusual), 1)
+                }
+                else {
+                    newItem = (Item(name: Helper.rareItemNames.randomElement()!, rarity: Item.Rarity.rare), 1)
+                }
+            }
+            else if itemRoll.dp == 3 {
+                if itemRoll.roll <= 35 {
+                    newItem = (Item(name: Helper.trashItemNames.randomElement()!, rarity: Item.Rarity.trash), 1)
+                }
+                else if itemRoll.roll <= 40 {
+                    newItem = (Item(name: Helper.vCommonItemNames.randomElement()!, rarity: Item.Rarity.vcommon), 1)
+                }
+                else if itemRoll.roll <= 50 {
+                    newItem = (Item(name: Helper.commonItemNames.randomElement()!, rarity: Item.Rarity.common), 1)
+                }
+                else if itemRoll.roll <= 65  {
+                    newItem = (Item(name: Helper.uncommonItemNames.randomElement()!, rarity: Item.Rarity.uncommon), 1)
+                }
+                else if itemRoll.roll <= 85  {
+                    newItem = (Item(name: Helper.unusualItemNames.randomElement()!, rarity: Item.Rarity.unusual), 1)
+                }
+                else if itemRoll.roll <= 95  {
+                    newItem = (Item(name: Helper.rareItemNames.randomElement()!, rarity: Item.Rarity.rare), 1)
+                }
+                else {
+                    newItem = (Item(name: Helper.vRareItemNames.randomElement()!, rarity: Item.Rarity.vrare), 1)
+                }
+            }
+            else if itemRoll.dp == 4 {
+                if itemRoll.roll <= 35 {
+                    newItem = (Item(name: Helper.trashItemNames.randomElement()!, rarity: Item.Rarity.trash), 1)
+                }
+                else if itemRoll.roll <= 36 {
+                    newItem = (Item(name: Helper.vCommonItemNames.randomElement()!, rarity: Item.Rarity.vcommon), 1)
+                }
+                else if itemRoll.roll <= 40 {
+                    newItem = (Item(name: Helper.commonItemNames.randomElement()!, rarity: Item.Rarity.common), 1)
+                }
+                else if itemRoll.roll <= 50  {
+                    newItem = (Item(name: Helper.uncommonItemNames.randomElement()!, rarity: Item.Rarity.uncommon), 1)
+                }
+                else if itemRoll.roll <= 73  {
+                    newItem = (Item(name: Helper.unusualItemNames.randomElement()!, rarity: Item.Rarity.unusual), 1)
+                }
+                else if itemRoll.roll <= 90  {
+                    newItem = (Item(name: Helper.rareItemNames.randomElement()!, rarity: Item.Rarity.rare), 1)
+                }
+                else {
+                    newItem = (Item(name: Helper.vRareItemNames.randomElement()!, rarity: Item.Rarity.vrare), 1)
+                }
+            }
+            else {
+                newItem = (Item(name: Helper.trashItemNames.randomElement()!, rarity: Item.Rarity.trash), 1)
+            }
         }
         
         // Add quantity of item to proper dict value
