@@ -193,10 +193,19 @@ class DogScene: SKScene {
     
     func switchActive (_ name : String) {
         if name == "mutt" {
-            dogs![1].active = true
+            dogs![0].active = !dogs![0].active
         }
         else if name == "pug" {
-            dogs![1].active = true
+            dogs![1].active = !dogs![1].active
+        }
+        else if name == "bc" {
+            dogs![2].active = !dogs![2].active
+        }
+        else if name == "as" {
+            dogs![3].active = !dogs![3].active
+        }
+        else if name == "cat" {
+            dogs![4].active = !dogs![4].active
         }
     }
 }
