@@ -2,10 +2,10 @@
 
 Dates 3/16-3/25
 
-**My Name: Angelina Olmedo **
+**My Name:** Angelina Olmedo
 
 
-**Project Name: Dig Dig Dogs!**
+**Project Name:** Dig Dig Dogs!
 
 
 **Is your project New or Old?** Old
